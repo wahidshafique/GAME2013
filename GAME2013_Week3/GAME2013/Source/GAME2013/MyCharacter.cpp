@@ -7,7 +7,7 @@
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(
@@ -26,13 +26,13 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
-void AMyCharacter::Tick( float DeltaTime )
+void AMyCharacter::Tick(float DeltaTime)
 {
-	Super::Tick( DeltaTime );
+	Super::Tick(DeltaTime);
 
 }
 
@@ -44,6 +44,16 @@ void AMyCharacter::SetupPlayerInputComponent(class UInputComponent* InputCompone
 	InputComponent->BindAxis(TEXT("Forward"),
 		this,
 		&AMyCharacter::MoveForward
+		);
+
+	InputComponent->BindAxis(TEXT("Strafe"),
+		this,
+		&AMyCharacter::Strafe
+		);
+	InputComponent->BindAction(TEXT("Jump"),
+		IE_Pressed,
+		this,
+		&AMyCharacter::JumpUp
 		);
 }
 
@@ -58,4 +68,20 @@ void AMyCharacter::MoveForward(float Scale)
 		Message);
 
 	CharacterMovement->AddInputVector(GetActorForwardVector() * Scale * 10);
+}
+
+void AMyCharacter::Strafe(float Scale)
+{
+	FString Message = FString::Printf(TEXT("Scale = %f"), Scale);
+
+	GEngine->AddOnScreenDebugMessage(
+		1,
+		5.f,
+		FColor::Red,
+		Message);
+	CharacterMovement->AddInputVector(GetActorRightVector() * Scale * 10);
+}
+
+void AMyCharacter::JumpUp(){
+	Jump();
 }

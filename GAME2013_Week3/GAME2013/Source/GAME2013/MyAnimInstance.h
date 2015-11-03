@@ -19,7 +19,9 @@ public:
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float Speed;
-	
-	
-	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float Jump;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		bool isFlying;
+
 };

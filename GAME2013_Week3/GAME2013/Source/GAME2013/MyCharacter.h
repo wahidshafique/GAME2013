@@ -13,10 +13,10 @@ class GAME2013_API AMyCharacter : public ACharacter
 	GENERATED_BODY()
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	USpringArmComponent* CameraBoom;
+		USpringArmComponent* CameraBoom;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UCameraComponent* Camera;
+		UCameraComponent* Camera;
 
 public:
 	// Sets default values for this character's properties
@@ -24,14 +24,15 @@ public:
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
+	virtual void Tick(float DeltaSeconds) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
 protected:
 	virtual void MoveForward(float Scale);
-	
+	virtual void Strafe(float Scale);
+	virtual void JumpUp();
 };
