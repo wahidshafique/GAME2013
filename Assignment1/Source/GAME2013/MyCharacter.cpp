@@ -3,7 +3,6 @@
 #include "GAME2013.h"
 #include "MyCharacter.h"
 
-
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
@@ -26,48 +25,39 @@ AMyCharacter::AMyCharacter()
 }
 
 // Called when the game starts or when spawned
-static int tickerCount;
-int fired = 0;
-//int AMyCharacter::ammo = 10;
-//int AMyCharacter::hit = 0;
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	tickerCount = 0;
-	fired = 0;
-	hit = 0;
-	ammo = 10; 
+	AMyPlayerState* MyPlayerState = Cast<AMyPlayerState>(PlayerState);
+
+	if (MyPlayerState) {////set initial values (do not want persistence)
+		MyPlayerState->Ammo = 10;
+		MyPlayerState->Hit = 0;
+		MyPlayerState->Fired = 0;
+	}
 }
 
 // Called every frame
 void AMyCharacter::Tick(float DeltaTime)
 {
-	if (ATarget::hitTarget){
-		hit += 1;
-		ATarget::hitTarget = false;
-	}
-	if (AMyPickUp::pickedUp){
-		ammo += 5;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Woot! You got 5 more ammo Ammo: %i"), ammo));
-		AMyPickUp::pickedUp = false;
-	}
 	Super::Tick(DeltaTime);
+	AMyPlayerState* MyPlayerState = Cast<AMyPlayerState>(PlayerState);
 
-	tickerCount += 1;
-	if (tickerCount >= 60) tickerCount = 60;
-	
-	if (bIsFiring && tickerCount >= 60 && ammo > 0) {
-		if (ammo > 10) {
-			ammo = 10;
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Maximum 10 ammo allowed, sorry >:} Back down to 10 you go ha!")));
+	FireRate -= DeltaTime;
+	if (bIsFiring && FireRate <= 0.f) {
+		FActorSpawnParameters SpawnParameters;
+		SpawnParameters.Instigator = this;
+
+		if (MyPlayerState && MyPlayerState->Ammo > 0){
+
+			GetWorld()->SpawnActor<AMyProjectile>(ProjectileClass,//spawn projectile, shifted a bit up, nudges a bit away from the player 
+				(GetActorLocation() + FVector(0.f, 0.f, 50.f)),
+				GetActorRotation(), SpawnParameters);//pass along your own params to the projectile as an extension of your playerstate
+
+			MyPlayerState->SetFired();
+			MyPlayerState->SetAmmo();
 		}
-		GetWorld()->SpawnActor<AMyProjectile>(ProjectileClass,
-			GetActorLocation() + FVector(0.f, 0.f, 50.f),
-			GetActorRotation());
-		tickerCount = 0;
-		fired += 1;
-		ammo -= 1;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Rounds Fired: %i  Ammo: %i  Hit: %i"), fired, ammo, hit));
+		FireRate = 1.f;//reset firerate, thereby created a constant 1 second interval 
 	}
 }
 

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "MyPlayerState.h"
 #include "MyPickUp.generated.h"
 
 UCLASS()
@@ -14,7 +15,6 @@ public:
 	// Sets default values for this actor's properties
 	AMyPickUp();
 
-	static bool pickedUp;
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	USphereComponent* Collider;

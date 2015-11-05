@@ -5,7 +5,6 @@
 
 
 // Sets default values
-bool ATarget::hitTarget = false;
 ATarget::ATarget()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -23,8 +22,11 @@ ATarget::ATarget()
 
 void ATarget::OnBeginOverlap(AActor* OtherActor)
 {
-	if (OtherActor->GetName().Contains("ExampleProjectile")){
-		hitTarget = true;
+	if (OtherActor->GetName().Contains("ExampleProjectile") && OtherActor->Instigator) {//first one is redundant but kept in just in case
+		AMyPlayerState* MyPlayerState = Cast<AMyPlayerState>(OtherActor->Instigator->PlayerState);//grab player state from the projectiles instigator (shooter)
+		
+		MyPlayerState->SetHit();
+
 		Destroy();
 	}
 }

@@ -26,26 +26,22 @@ AMyCharacter::AMyCharacter()
 }
 
 // Called when the game starts or when spawned
-static int TickerCount;
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	TickerCount = 0;
 }
 
 // Called every frame
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	FireRate -= DeltaTime;//fixed
 
-	TickerCount += 1;
-	if (TickerCount >= 60) TickerCount = 60;
-	
-	if (bIsFiring && TickerCount >= 60) {
+	if (bIsFiring && FireRate <= 0.f) {
 		GetWorld()->SpawnActor<AMyProjectile>(ProjectileClass,
 			GetActorLocation(),
 			GetActorRotation());
-		TickerCount = 0;
+		FireRate = 1.f;
 	}
 }
 

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "MyPlayerState.h"
 #include "Target.generated.h"
 
 UCLASS()
@@ -14,13 +15,13 @@ public:
 	// Sets default values for this actor's properties
 	ATarget();
 
-	static bool hitTarget;
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		USphereComponent* Collider;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UStaticMeshComponent* Mesh;
+
 	UFUNCTION()
 		virtual void OnBeginOverlap(AActor* OtherActor);
 

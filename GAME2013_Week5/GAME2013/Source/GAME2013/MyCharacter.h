@@ -19,7 +19,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UCameraComponent* Camera;
 
-	FTimerHandle Handle;
+	UPROPERTY(EditAnyWhere)
+	float FireRate; //get firerate from delta time so it is not dependent on frame rate
 
 public:
 	// Sets default values for this character's properties

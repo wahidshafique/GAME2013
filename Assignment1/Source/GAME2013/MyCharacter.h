@@ -6,8 +6,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "MyProjectile.h"
-#include "MyPickUp.h"
-#include "Target.h"
+#include "MyPlayerState.h"
 #include "MyCharacter.generated.h"
 
 UCLASS()
@@ -21,16 +20,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UCameraComponent* Camera;
 
-	FTimerHandle Handle;
-
 public:
-	int ammo;
-	int hit;
-
-	//void ChangeAmmoHit(){
-	// ammo += 5;
-		//hit += 1; 
-	//}
 	// Sets default values for this character's properties
 	AMyCharacter();
 
@@ -46,11 +36,15 @@ public:
 	bool bIsFiring;
 
 protected:
+	UPROPERTY(EditAnyWhere)
+	float FireRate; //get firerate from delta time so it is not dependent on frame rate
+
 	UPROPERTY(EditAnywhere)
 	float RotationSpeed;
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AMyProjectile> ProjectileClass;
+
 
 protected:
 	virtual void MoveForward(float Scale);
@@ -62,6 +56,7 @@ protected:
 	virtual void StopFire();
 
 private:
+	
 	
 	
 };

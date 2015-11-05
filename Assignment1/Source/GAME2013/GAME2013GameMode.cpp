@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "GAME2013.h"
+#include "MyPlayerState.h"
 #include "GAME2013GameMode.h"
 
 AGAME2013GameMode::AGAME2013GameMode(const FObjectInitializer& ObjectInitializer)
@@ -16,7 +17,7 @@ AGAME2013GameMode::AGAME2013GameMode(const FObjectInitializer& ObjectInitializer
 		{
 		}
 	};
-
+	PlayerStateClass = AMyPlayerState::StaticClass();
 	static FConstructorStatics ConstructorStatics;
 
 	if (ConstructorStatics.CharacterClass.Object)

@@ -30,23 +30,20 @@ AMyProjectile::AMyProjectile()
 
 void AMyProjectile::OnBeginOverlap(AActor* OtherActor)
 {
-	if (OtherActor->GetName().Contains("Target"))
+	if (OtherActor->GetName().Contains("Target")){
 		Destroy();
+	}
 }
-
 
 // Called when the game starts or when spawned
 void AMyProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	//Destroy();
-
 }
 
 // Called every frame
 void AMyProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
