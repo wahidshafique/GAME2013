@@ -6,7 +6,9 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "MyProjectile.h"
+#include "Weapon.h"
 #include "MyCharacter.generated.h"
+
 
 UCLASS()
 class GAME2013_API AMyCharacter : public ACharacter
@@ -14,31 +16,33 @@ class GAME2013_API AMyCharacter : public ACharacter
 	GENERATED_BODY()
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	USpringArmComponent* CameraBoom;
+		USpringArmComponent* CameraBoom;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UCameraComponent* Camera;
+		UCameraComponent* Camera;
 
 public:
+	FORCEINLINE bool IsFiring(){ return bIsFiring; }
+	FORCEINLINE void SetFiring(bool set){ bIsFiringReady = set; }
 	// Sets default values for this character's properties
 	AMyCharacter();
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	virtual void BeginDestroy() override;
-	
+
 	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
+	virtual void Tick(float DeltaSeconds) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
 protected:
 	UPROPERTY(EditAnywhere)
-	float RotationSpeed;
+		float RotationSpeed;
 
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<AMyProjectile> ProjectileClass;
+		TSubclassOf<AMyProjectile> ProjectileClass;
 
 protected:
 	virtual void MoveForward(float Scale);
@@ -49,7 +53,9 @@ protected:
 
 	virtual void StopFire();
 
+
+
 private:
 	bool bIsFiring;
-	
+	bool bIsFiringReady;
 };

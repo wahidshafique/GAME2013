@@ -3,22 +3,23 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "MyCharacter.h"
 #include "Weapon.generated.h"
 
 UCLASS(Abstract)
 class GAME2013_API AWeapon : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AWeapon();
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
+	virtual void Tick(float DeltaSeconds) override;
 
 	void StartAttack();
 	void EndAttack();
@@ -31,7 +32,7 @@ public:
 
 protected:
 	UPROPERTY(EditDefaultsOnly)
-	float AttackSpeed;
+		float AttackSpeed;
 
 	float TimeToNextAttack;
 
@@ -40,5 +41,5 @@ protected:
 
 private:
 	bool bIsAttacking;
-	
+
 };

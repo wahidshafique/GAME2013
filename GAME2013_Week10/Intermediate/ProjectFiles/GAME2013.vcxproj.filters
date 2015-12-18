@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GAME2013.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{86316D8F-6070-4494-87F2-156FAC8CE037}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GAME2013.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GAME2013Editor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{8807BA14-A5DA-48A1-9DC5-286AA38F1FC9}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GAME2013">
+      <UniqueIdentifier>{F1A50C61-36CA-44C6-8435-1502BB423AD1}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GAME2013\GAME2013.Build.cs">
+      <Filter>Source\GAME2013</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GAME2013\GAME2013.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\GAME2013.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\GAME2013GameMode.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\GAME2013GameMode.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyAnimInstance.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyAnimInstance.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyCharacter.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyCharacter.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyPickUp.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyPickUp.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyPlayerState.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyPlayerState.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyProjectile.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyProjectile.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\Weapon.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\Weapon.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\WeaponMelee.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\WeaponMelee.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\WeaponMeleeBlunt.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\WeaponMeleeBlunt.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\GAME2013\ANormalHitWeapon.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\GAME2013\ANormalHitWeapon.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

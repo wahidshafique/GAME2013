@@ -7,22 +7,24 @@
 // Sets default values
 AWeapon::AWeapon()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
 void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	AMyCharacter *pba = new AMyCharacter;
+	AMyCharacter* MyChar =
+		Cast<AMyCharacter>(pba);
+	MyChar->SetFiring(true);
 }
 
 // Called every frame
-void AWeapon::Tick( float DeltaTime )
+void AWeapon::Tick(float DeltaTime)
 {
-	Super::Tick( DeltaTime );
+	Super::Tick(DeltaTime);
 
 	TimeToNextAttack -= DeltaTime;
 	if (CanAttack() && IsAttacking())
@@ -55,3 +57,12 @@ void AWeapon::Attack()
 {
 	TimeToNextAttack = AttackSpeed;
 }
+
+//FHitResult AWeapon::WeaponTrace(const FVector &TraceFrom, const FVector &TractTo) const{
+//
+//}
+//
+//
+//void AWeapon::ProcessInstantHit(const FHitResult &Impact, const FVector &Origin, const FVector &ShootDir){
+//
+//}

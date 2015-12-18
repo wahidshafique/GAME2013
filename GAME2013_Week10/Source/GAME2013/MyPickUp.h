@@ -5,7 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "MyPickUp.generated.h"
 
-UCLASS()
+UCLASS(Abstract)
 class GAME2013_API AMyPickUp : public AActor
 {
 	GENERATED_BODY()

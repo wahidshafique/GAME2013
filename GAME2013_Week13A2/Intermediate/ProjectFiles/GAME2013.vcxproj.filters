@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GAME2013.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{EA603C36-4CF0-4089-A27B-3C3094B6628C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GAME2013.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GAME2013Editor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{B54EBBFB-1E5F-4B43-A358-1658F973C0B3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GAME2013">
+      <UniqueIdentifier>{2EB2694F-7826-4EDE-B2CD-6591EA53F183}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GAME2013\FindEnemyTask.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\FindEnemyTask.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\GAME2013\GAME2013.Build.cs">
+      <Filter>Source\GAME2013</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GAME2013\GAME2013.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\GAME2013.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\GAME2013GameMode.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\GAME2013GameMode.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyAICharacter.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyAICharacter.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyAIController.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyAIController.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyAnimInstance.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyAnimInstance.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyCharacter.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyCharacter.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyHUD.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyHUD.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyPickUp.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyPickUp.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyPlayerNameWidget.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyPlayerNameWidget.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyPlayerState.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyPlayerState.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\MyProjectile.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\MyProjectile.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\Weapon.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\Weapon.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\WeaponMelee.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\WeaponMelee.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GAME2013\WeaponMeleeBlunt.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GAME2013\WeaponMeleeBlunt.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\GAME2013\MyPlayerAmmoWidget.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GAME2013\MyPlayerHealthWidget.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GAME2013\ShotGun.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GAME2013\Pistol.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GAME2013\RocketLauncher.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GAME2013\Hammer.h">
+      <Filter>Source\GAME2013</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\GAME2013\MyPlayerAmmoWidget.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GAME2013\MyPlayerHealthWidget.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GAME2013\ShotGun.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GAME2013\Pistol.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GAME2013\RocketLauncher.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GAME2013\Hammer.cpp">
+      <Filter>Source\GAME2013</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

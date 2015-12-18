@@ -8,7 +8,7 @@
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(
@@ -30,7 +30,7 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 void AMyCharacter::BeginDestroy()
@@ -47,11 +47,11 @@ void AMyCharacter::BeginDestroy()
 }
 
 // Called every frame
-void AMyCharacter::Tick( float DeltaTime )
+void AMyCharacter::Tick(float DeltaTime)
 {
-	Super::Tick( DeltaTime );
-
-	if (bIsFiring)
+	Super::Tick(DeltaTime);
+	
+	if (bIsFiring && bIsFiringReady)
 	{
 		FActorSpawnParameters SpawnParameters;
 		SpawnParameters.Instigator = this;
